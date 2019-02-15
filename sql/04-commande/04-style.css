@@ -1,0 +1,29 @@
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: #ffffff;
+  font-family: 
+
+.vendor {
+  width: 25%;
+  border-radius: 5px;
+  background-color: #6a7caf;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 10px;
+  border: 1px solid #000000;
+}
+h1 {
+  text-align: center;
+  color: #041649;
+  text-transform: uppercase;
+}
+.productName {
+  font-weight: bold;
+  color: #5d87fd;
+}
+.titre {
+  color: #141100;
+  font-family: 
+}

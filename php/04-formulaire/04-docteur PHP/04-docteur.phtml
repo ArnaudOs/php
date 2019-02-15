@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rendes-vous docteur Richard</h1>
+    <?php if ($siEnvoi === false) : ?>
+    <form action="" method="POST">
+        <input type="text" name= "nom" placeholder="votre nom">
+         <input type="text" name= "prenom" placeholder="votre prenom">
+        <input type="datetime-local" name= "date" placeholder="datesouhaitée">
+         <textarea name="description" placholder="description"></textarea>
+         <select name="raison" id="">
+                    <option value="1">suivi</option>
+                    <option value="2">urgence</option>
+                    <option value="3">ordonnance</option>
+                    <option value="3">vaccin</option>
+
+                </select>
+         <button type="submit">Envoyer</button>
+    </form>
+    <?php else : ?>
+    <h2>Merci pour votre rendez vous avec le docteur Richard</h2>
+    <ul>
+        <li>Nom <?= $nom ?></li>
+        <li>Prenom <?= $prenom ?> </li>
+        <li>Date <?= $date ?> </li>
+         <li>Description <?= $description ?></li>
+         <li>Raison <?= $raison ?> </li>
+         <li>urgence <?= $value1 ?> </li>
+          <li>ordonnance <?= $value2 ?> </li>
+          <li>vaccin <?= $value3 ?> </li>
+</ul>
+<?php endif; ?>
+</body>
+</html>

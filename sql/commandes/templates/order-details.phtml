@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
+    <title>Détail de la commande 10 100</title>
+</head>
+<body>
+    
+    <section class="hero is-info">
+        
+        <div class="hero-body">
+            <div class="container">
+               
+            <h1 class="title">
+              Détail de la commande <?= $details[0]['orderNumber'] ?>
+            </h1>
+         
+            <h2 class="subtitle">
+              Commande passée le <?= $details[0]['orderDate'] ?> par <?= $details[0]['customerName'] ?>
+            </h2>
+               
+            </div>
+        </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column" is-4>
+            <article class="box">
+                    <h2 class="subtitle">
+                        Détail du client
+                    </h2>
+                    <strong>Nom : <?= $details[0]['customerName'] ?></strong> <br>
+                    <strong>Contact : <?= $details[0]['contactFirstName'] ?> <?= $details[0]['contactLastName'] ?></strong>
+                     <br>
+                    <strong>Représentant commercial :<?= $details[0]['firstName'] ?> <?= $details[0]['lastName'] ?></strong> 
+                    <br>
+                    <strong>Bureau: </strong>  <?= $details[0]['city'] ?>
+                </article>
+               
+            </div>
+            <div class="column">
+                <article class="box">
+                 <h2 class="subtitle">Détail de la commande</h2>   
+                 <table class="table is-hoverable is-fullwidth is-bordered">
+                 <thead>
+                     <tr>
+                         <th>Code</th>
+                         <th>Nom</th>
+                         <th>Quantité</th>
+                         <th>Prix unitaire</th>
+                         <th>Montant total</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <?php foreach ($details as $index => $detail) : ?>
+                     <tr>
+                         <td><?= $detail['productCode'] ?></td>
+                         <td><?= $detail['productName'] ?></td>
+                         <td><?= $detail['quantityOrdered'] ?></td>
+                         <td><?= $detail['priceEach'] ?></td>
+                         <td><?= $detail['montant'] ?></td>
+                     </tr>
+                 <?php endforeach ?>
+                 </tbody>
+                 <tfoot>
+                     <tr>
+                         <td colspan = "4" class="has-text-weight-bold has-text-right">Total</td>
+                         <td> <?= $Totals ?> €</td>
+                     </tr>
+                 </tfoot>
+                </table>
+                 </article>
+                <a href="index.php" class="button is-link">Retour a la liste</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

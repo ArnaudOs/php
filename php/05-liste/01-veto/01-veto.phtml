@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="01-veto.css">
+</head>
+<body>
+    <header>
+        <h1>Liste des animaux(patient du cabinet)</h1>
+    </header>
+    <main>
+        <?php foreach ($animaux as $index => $animal) : ?>
+<div class="animal">
+    <h3><?= $animal["name"] ?></h3>
+    <hr>
+    <div class="informations">
+        <strong> Age :</strong> <?= $animal["age"] ?>
+    </div>
+    <div class="commentaire">
+    <p><?= $animal["comment"] ?></p>
+    </div>
+</div>
+<?php endforeach ?>
+
+
+    </main>
+</body>
+</html>

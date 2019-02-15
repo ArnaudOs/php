@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Nouveau patient</h1>
+    </header>
+    <main>
+        <form action="06-confirmation.php" method="POST">
+            <input type="text" name="name" placeholder="Nom de l'animal">
+            <input type="text" name="age" placeholder="age de l'animal">
+            <select name="type" id="">
+                <!-- On va boucler sur le tableau types qui contient les différents types d'animaux.
+                pour chaque type, on prend la clé et et la valeur.
+                -la clé représente  la value de l'option (do, cat ...)
+            - la valeur représente le text de l'option ce qui s'affiche-->
+                <?php foreach ($types as $cle => $valeur) : ?>
+                <option value="<?= $cle ?>"><?= $valeur ?></option>
+                <?php endforeach ?>
+            </select>
+            <textarea name="comment" placeholder="avez-vous quelque chose à dire"></textarea>
+             <button type="submit">Crée la fiche de l'animal</button>
+        </main>
+</body>
+</html>

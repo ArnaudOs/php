@@ -1,0 +1,22 @@
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 30%;
+  border-radius: 5px;
+  background-color: #eee;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 10px;
+}
+h1 {
+  text-align: center;
+  color: #041649;
+}
+.productName {
+  font-weight: bold;
+  color: #5d87fd;
+}

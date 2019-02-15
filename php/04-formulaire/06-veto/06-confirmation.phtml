@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Confiramtion d'ajout de fiche</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <?php if ($isSubmitted) : ?>
+            Bravo, la nouvelle fiche est bien enregistré
+            <?php else : ?>
+            Dégage de là
+            <?php endif ?>
+        </h1>
+    </header>
+    <main>
+          <?php if ($isSubmitted) : ?>
+          <p>Bonjour vous avez bien enregistré la fiche de <?= $name ?>
+          le <?= $type ?> qui a  <?= $age ?> ans
+          <?php if ($comment != "") : ?>
+          <h3>Votre commentaire</h3>
+          <p><?= $comment ?></p>
+          <?php endif ?>
+        <?php else : ?>
+          <p> Bonjour, vous n'avez rien à faire là, c'est une erreur</p>
+          <a href="06-veto.php">retour au formulaire</a>
+<?php endif ?>
+    </main>
+</body>
+</html>

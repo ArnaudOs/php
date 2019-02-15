@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Confirmation d'inscription</title>
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+    />
+</head>
+<body>
+    <section class="hero is-warning is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+           Bravo votre inscription est confirmée
+          </h1>
+          <h2 class="subtitle">
+            Voici les informations soumises :
+          </h2>
+          <p><?= $firstName ?>
+        <?= $lastName ?></p>
+             <p><?= $email ?></p>vous nous avez connu grâce à : <em><?= $origins[$origin] ?></em></p>
+        </div>
+      </div>
+    </section>
+</body>
+</html>

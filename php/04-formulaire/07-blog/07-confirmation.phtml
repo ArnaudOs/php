@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog cuisine et politique</title>
+</head>
+<body>
+    <header>
+        <h1>
+        <?php if ($isSubmitted) : ?>
+        Votre article a bien été ajouté
+        <?php else : ?>
+        il y a eu une erreur 
+         <?php endif ?>
+        </h1>
+    </header>
+    <main>
+        <?php if ($isSubmitted) : ?>
+        <p>Votre article a bien été posté le titre est <?= $title ?> 
+        la catégorie est <?= $types[$category] ?></p><!-- on choisit dans type la catgorie-->
+        votre image de l'article <img src="<?= $img ?>"> </img>
+        <?php if ($contain != "") : ?>
+        <h3>Votre commentaire </h3>
+        <p> <?= $contain ?></p>
+        <?php endif ?>
+        <?php else : ?>
+            <p>vous n'avez rien à faire là c'est une erreur</p>
+            <a href="07-blog.php"> retour au formulaire</a>
+            <?php endif ?>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Plats</h1>
+    </header>
+    <main>
+        <?php if ($hasErrors == true) : ?>
+        <h3>Erreur sur le formulaire</h3>
+        <ul>
+        <?php foreach ($errors as $error) : ?>
+        <li><?= $error ?></li>
+        <?php endforeach ?>
+        </ul>
+         <?php endif ?>
+        <form class="formulaire" action="11-confirmation.php" method="POST">
+                <input type="text" name="title" placeholder="titre">
+                <input type="number" name="price" placeholder="titre">
+                <textarea name="description" placeholder="votre description"></textarea>
+            <label for="" class="label">Vegetarien</label>
+            <select name="vegetarian" id="">
+                <option value="yes">oui</option>
+                <option value="no">non</option>
+        </select>
+            <button type="submit">Envoi</button>
+        </form>
+       
+    </main>
+    
+</body>
+</html>

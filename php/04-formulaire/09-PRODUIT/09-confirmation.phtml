@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <?php if ($isSubmitted) : ?>
+            Votre produit a été ajouté
+            <?php else : ?>
+            il y a une erreur
+            <?php endif ?>
+        </h1>
+    </header>
+    <main>
+        <?php if ($isSubmitted) : ?>
+        <ul>
+            <li> votre code est le <?= $code ?></li>
+             <li> Le nom est le <?= $name ?></li>
+            <li> Le prix est <?= $price ?></li>
+            <li> La description est <?= $description ?></li>
+            <?php else : ?>
+            <P> vous n'avez rien à fair ela c'est une erreur</p>
+            <a href="09-produit.php"> retour au formulaire</a>
+            <?php endif ?>
+        </ul>
+
+    </main>
+</body>
+</html>

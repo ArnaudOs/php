@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Formulaire création tâche</h1></header>
+    <?php if ($siEnvoi === false) : ?>
+    <form action="" method="post">
+        <input type="text" name= "title" placeholder="votre titre">
+         <textarea name="description" placholder="description"></textarea>
+         <select name="priorite" id="">
+                    <option value="1">important</option>
+                    <option value="2">urgent</option>
+                    <option value="3">tres urgent</option>
+                </select>
+         <button type="submit">Envoyer</button>
+    </form>
+    <?php else : ?>
+    <h2>Votre tâche</h2>
+    <ul>
+        <li>titre de la tâche <?= $title ?></li>
+        <li>description <?= $description ?></li>
+        <li>priorité <?= $priorite ?></li>
+    </ul>
+<?php endif; ?>
+</body>
+</html>

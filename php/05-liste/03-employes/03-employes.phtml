@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employes</title>
+        <link rel="stylesheet" href="03-employes.css">
+</head>
+<body>
+    <header>
+        <h1>Liste des employées</h1>
+    </header>
+    <main>
+        <?php foreach ($employees as $index => $employe) : ?>
+        <article class="employe">
+            <h3 class="id">Numéro de l'employé <?= $employe["id"] ?></h3>
+            <hr>
+            <img src="https://raw.githubusercontent.com/Centvrio/Centvrio.Emoji/master/logo.png">
+            <div class="firstName">Prenom : <?= $employe["firstName"] ?></div>
+            <div class="lastName">Nom : <?= $employe["lastName"] ?></div> 
+            <div class="company">compagny : <?= $employe["company"] ?></div>
+             <div class="age">age : <?= $employe["age"] ?></div>
+              <div class="address">adresse : <?= $employe["address"] ?></div>
+        </article>
+        <?php endforeach ?>
+    </main>
+    
+</body>
+</html>

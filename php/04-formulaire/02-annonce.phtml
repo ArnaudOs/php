@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulaire de création d'annonce</h1>
+    <?php if ($siEnvoi === false) : ?>
+    <form action="" method="post">
+        <input type="text" name= "title" placeholder="votre titre">
+        <input type="number" name= "price" placeholder="votre prix">
+         <textarea name="description" placholder="description"></textarea>
+         <input type="text" name="img" placeholder"votreimage">
+         <button type="submit">Envoyer</button>
+    </form>
+    <?php else : ?>
+    <h2> Merci pour votre annonce</h2>
+    <ul>
+    <li>Titre<?= $title ?></li>
+    <li>Prix :  <?= $price ?></li>
+    <li>Description : <?= $description ?></li>
+    <li>Image : <img src="<?= $img ?>"></img></li>
+</ul>
+<?php endif; ?>
+</body>
+</html>

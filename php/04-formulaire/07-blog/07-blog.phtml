@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog cuisine et politique</title>
+</head>
+<body>
+    <header>
+        <h1>Blog cuisine et politique</h1>
+    </header>
+    
+    <form action="07-confirmation.php" method="POST">
+            <input type="text" name="title" placeholder="titre de l'article">
+            <select name="category" id="">
+                <?php foreach ($types as $cle => $valeur) : ?>
+                <option value="<?= $cle ?>"><?= $valeur ?></option>
+                 <?php endforeach ?>
+                <!--<option name="cuisine">Cuisine</option>
+                <option name="actualité">Actualité</option>-->
+            </select>
+            <input type="text" name="img" placeholder"image de l'article">
+            <textarea name="contain" placeholder="contenu de l'article"></textarea>
+            <button type="submit">Envoi</button>
+
+    </form>
+    
+</body>
+</html>

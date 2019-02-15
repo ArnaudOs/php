@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Traducteur Anglais/Français</h1>
+    </header>
+
+    <main>
+        <?php if (empty($_POST) === true) : ?>
+            <form action="" method="POST">
+                <input type="text" name="word" placeholder="Tapez le mot à traduire">
+                <select name="direction" id="">
+                    <option value="toFrench">Anglais à Français</option>
+                    <option value="toEnglish">Français à Anglais</option>
+                </select>
+                <button type="submit">Traduire</button>
+            </form>
+        <?php else : ?>
+            <h2>Résultat :</h2>
+            <p><?= $traduction ?></p>
+        <?php endif; ?>
+    </main>
+</body>
+</html>

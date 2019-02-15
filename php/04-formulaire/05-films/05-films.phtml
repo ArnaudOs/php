@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <?php if ($isSubmit === false) : ?>
+    <form action="" method="POST">
+        <input type="text" name= "title" placeholder="title">
+        <input type="text" name= "director" placeholder="director">
+        <input type="number" name= "year" placeholder="year">
+         <textarea name="resume" placholder="resume"></textarea>
+         <input type="number" name="rating" min="1" max="5" placeholder="rating">
+         <button type="submit">Send</button>
+    </form>
+    <?php else : ?>
+    <h2>Vous avez ajouté votre film</h2>
+    <ul>
+        <li>Title :<?= $title ?></li>
+        <li>Director : <?= $director ?></li>
+         <li>Year : <?= $year ?></li>
+        <li>Resume : <?= $resume ?></li>
+        <li>Rating :<?= $rating ?></li>
+    </ul>
+<?php endif; ?>
+</body>
+</html>

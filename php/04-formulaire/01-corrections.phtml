@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inscription à notre service en ligne !</h1>
+    <!-- $isSubmitted est envoyé on le cache-->
+    <?php if ($isSubmitted === false) : ?>
+    <form action="" method="post">
+        <input type="text" name="firstName" placeholder="Votre prénom !">
+        <input type="text" name="lastName" placeholder="Votre nom de famille">
+        <input type="email" name="email" placeholder="Votre adresse email">
+        <input type="text" name="phoneNumber" placeholder="Numéro de téléphone">
+        <button type="submit">Je m'inscris !</button>
+    </form>
+<?php else : ?>
+<h2>Merci pour votre inscription, voici vos informations :</h2>
+<ul>
+    <li>Identité : <strong> <?= $firstName ?> <?= $lastName ?></strong></li>
+    <li>Email :  <?= $email ?></li>
+    <li>Telephone :  <?= $phoneNumber ?></li>
+</ul>
+<?php endif; ?>
+</body> 
+</html>

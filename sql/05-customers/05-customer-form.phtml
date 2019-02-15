@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Customer</h1>
+    <?php if ($hasErrors == true) : ?>
+    <h3> Erreur sur le formulaire</h3>
+    <ul>
+        <?php foreach ($errors as $error) : ?>
+            <li> <?= $error ?> </li>
+        <?php endforeach ?>
+        </ul>
+        <?php endif ?>
+    <form action="05-confirmation.php" method="POST">
+        <input type="text" name="customerName" placeholder="Nom client">
+        <input type="text" name="contactFirstName" placeholder="prenom acheteur">
+        <input type="text" name="contactlastName" placeholder="Nom acheteur">
+        <input type="text" name="phone" placeholder="Numéro client">
+        <textarea name="adress" id="" cols="30" rows="10"></textarea>
+        <input type="text" name="city" placeholder="ville">
+        <input type="text" name="country" placeholder="pays">
+    <button type="submit">Envoi</button>
+    </form>
+    
+</body>
+</html>
