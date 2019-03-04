@@ -1,0 +1,17 @@
+   
+   
+<form action="update-user.php" method="POST">
+ <legend>Ajouter un utilisateur</legend>
+ <label for="">id</label>
+ <input type="text" name="id" value="<?= $user['id'] ?>">"
+ <label for="">email</label>
+<input type="text" name="email" value="<?= $user['email'] ?>">
+<label for="">firstname</label>
+<input type="text" name="firstname" value="<?= $user['firstname'] ?>">
+<label for="">lastname</label>
+<input type="text"name="lastname" value="<?= $user['lastname'] ?>">
+<label for="">password</label>
+<input type="text" name="password" value="<?= $user['password'] ?>">
+<button type="submit">Envoi</button>
+        <!-- le boutton qui n'a pas de name ne peut pas être envoyé -->
+</form>

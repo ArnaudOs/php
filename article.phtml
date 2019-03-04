@@ -1,0 +1,32 @@
+
+        <article>
+            <h2>
+            <?= $article['title'] ?>
+            </h2>
+            <h4>
+             le <?= $article['creation_date'] ?> dans la catégorie <?= $article['type'] ?> par <?= $article['firstname'] ?> <?= $article['lastname'] ?>. <p>Il y a <?= $article['commentaires'] ?> commentaires</p>
+            </h4>
+            <p>
+            <?= $article['content'] ?>
+            </p>
+            <a href="edit-article.php?id=<?= $article['id'] ?>"class="more">Modifier</a>
+        </article>
+        <?php foreach ($commentaires as $commentaire) : ?>
+        <article class="com">
+            <h2><?= $commentaire['creation_date'] ?> <i class="fas fa-comment"></i>  <?= $commentaire['nickname'] ?></h2>
+            <p><?= $commentaire['content'] ?> </p>
+        </article>
+        <?php endforeach ?>
+        <?php if (!empty($_SESSION['connected'])) : ?>
+        <form action="add.comment.php" method="POST">
+            <legend>Vous aussi commentez !</legend>
+            <!-- <input type="text" name="nickname" placeholder="name"> -->
+            <textarea name="comment" id="" cols="20" rows="10" placeholder="commentaire"></textarea>
+            <input type="hidden" name="articleid" placeholder="numero de l'article" value= <?= $article['id'] ?>>
+            <button type="submit">Envoi</button>
+        
+        </form>
+        <?php else : ?>
+        <h2>Connectez-vous pour commentez !</h2>
+        <a href="form-login.php">Connexion</a>
+        <?php endif ?>

@@ -1,0 +1,22 @@
+
+<body>
+    <form action="save-article.php" method="POST">
+        <legend>Ajouter un article</legend>
+        <input type="text" name="title" placeholder="titre">
+        <select name="categories" class="categories">
+            <?php foreach ($categories as $categorie) : ?>
+            <option value="<?= $categorie['id'] ?>"><?= $categorie['type'] ?></option>
+            <?php endforeach ?>
+        </select>
+        <select name="authors" class="authors">
+             <?php foreach ($authors as $author) : ?>
+            <option value="<?= $author['id'] ?>"><?= $author['firstname'] ?> <?= $author['lastname'] ?>  </option>
+            <?php endforeach ?>
+        </select>
+        <textarea name="content" id="" cols="30" rows="10"></textarea>
+        
+        <button type="submit">Envoi</button>
+
+    </form>
+</body>
+</html>

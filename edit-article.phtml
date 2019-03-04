@@ -1,0 +1,21 @@
+
+<body>
+    <form action="update-article.php" method="POST">
+<input type="text" name="title" value="<?= $article['title'] ?>">
+<select name="categories" class="categories">
+            <?php foreach ($categories as $categorie) : ?>
+            <option value="<?= $categorie['id'] ?>"<?php if ($article['category_id'] == $categorie['id']) : ?>selected<?php endif ?>><?= $categorie['type'] ?></option>
+            <?php endforeach ?>
+        </select>
+        <select name="authors" class="authors">
+             <?php foreach ($authors as $author) : ?>
+            <option value="<?= $author['id'] ?>"<?php if ($author['id'] == $article['author_id']) : ?>selected<?php endif ?>><?= $author['firstname'] ?> <?= $author['lastname'] ?>  </option>
+            <?php endforeach ?>
+        </select>
+        <textarea name="content" id="" cols="30" rows="10"><?= $article['content'] ?></textarea>
+        <input type="hidden" value="<?= $article['id'] ?>" name="id">
+        <button type="submit">Envoi</button>
+        <!-- le boutton qui n'a pas de name ne peut pas être envoyé -->
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+
+
+    
+      <?php foreach ($articles as $article) : ?>
+      <article>
+        <h2><?= $article['title'] ?></h2>
+        <h4>
+          le <?= $article['creation_date'] ?> dans la catégorie <?= $article['type'] ?> par <?= $article['firstname'] ?> <?= $article['lastname'] ?> et <?= $article['commentaires'] ?>
+          commentaires.
+        </h4>
+        <p>
+          <?= cutWords(strip_tags($article['content']), 15) ?>...
+        </p>
+        
+        <a href="article.php?id=<?= $article['id'] ?>" class="more">Lire la suite <i class="fas fa-plus-circle"></i></a>
+         <a href="edit-article.php?id=<?= $article['id'] ?>" class="mod">Modifier</a>
+         <a href="delete-article.php?id=<?= $article['id'] ?>" class="suppr">Supprimer</a>
+      </article>
+      
+     <?php endforeach ?>
+    
+    
